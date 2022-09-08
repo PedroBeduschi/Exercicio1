@@ -14,3 +14,9 @@ form div
     width: 100%;
     margin:10px auto;
 }
+
+form #divxp
+{
+    display: flex;
+    flex-direction: row;
+}
