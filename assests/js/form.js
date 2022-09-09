@@ -12,13 +12,24 @@ function testaFormulario(e)
         var pessoas = [];
     }
 
-    pessoas.push(
-        {
+    if (id !== null)
+    {
+        pessoas[id]= {
             nome: e.target.elements['nome'].value,
             tel: e.target.elements['telefone'].value,
             xp: (e.target.elements['xp'].value == 'true')
         }
-    )
+    }
+    else
+    {
+        pessoas.push(
+            {
+                nome: e.target.elements['nome'].value,
+                tel: e.target.elements['telefone'].value,
+                xp: (e.target.elements['xp'].value == 'true')
+            }
+        )
+    }
 
     localStorage.setItem('pessoas', JSON.stringify(pessoas));
 
@@ -31,5 +42,25 @@ var id = urlPrincipal.searchParams.get('pessoa');
 
 if (id !== null)
 {
-    console.log(id);
+    var pessoas0 = localStorage.getItem('pessoas')
+    if (pessoas0 != null)
+    {
+        var pessoas = JSON.parse(pessoas0);
+    }
+    else
+    {
+        var pessoas = [];
+    }
+    console.log(pessoas[id]);
+
+    document.getElementById('nome').value = pessoas[id].nome;
+    document.getElementById('telefone').value = pessoas[id].tel;
+    if (pessoas[id].xp)
+    {
+        document.getElementById('experienciaSim').checked = true;
+    }
+    else
+    {
+        document.getElementById('experienciaNao').checked = true;
+    }
 }
