@@ -29,7 +29,7 @@
                 </div>
                 <div>
                     <label for="telefone">Telefone:</label>
-                    <input id="telefone" type="text" placeholder="(00) 00000 0000"/>
+                    <input id="telefone" type="text" onkeypress="testaTelefone(event)" onfocus="this.value = ''" placeholder="(00) 00000 0000"/>
                 </div>
                 <div id="divxp">
                     <label>Experiência prévia: </label>

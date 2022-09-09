@@ -2,6 +2,21 @@ function testaFormulario(e)
 {
     e.preventDefault();
     
+    for (i in e.target.elements['telefone'].value)
+    {
+        if ('0123456789'.indexOf(e.target.elements['telefone'].value[i]) == -1)
+        {
+            alert('Apenas números são permitidos no campo Telefone!');
+            return false
+        }
+    }
+
+    if (e.target.elements['telefone'].value.length < 11)
+    {
+        alert('Número inválido!');
+        return false
+    }
+
     var pessoas0 = localStorage.getItem('pessoas')
     if (pessoas0 != null)
     {
@@ -16,7 +31,7 @@ function testaFormulario(e)
     {
         pessoas[id]= {
             nome: e.target.elements['nome'].value,
-            tel: e.target.elements['telefone'].value,
+            telefone: e.target.elements['telefone'].value,
             xp: (e.target.elements['xp'].value == 'true')
         }
     }
@@ -25,7 +40,7 @@ function testaFormulario(e)
         pessoas.push(
             {
                 nome: e.target.elements['nome'].value,
-                tel: e.target.elements['telefone'].value,
+                telefone: e.target.elements['telefone'].value,
                 xp: (e.target.elements['xp'].value == 'true')
             }
         )
@@ -54,7 +69,7 @@ if (id !== null)
     console.log(pessoas[id]);
 
     document.getElementById('nome').value = pessoas[id].nome;
-    document.getElementById('telefone').value = pessoas[id].tel;
+    document.getElementById('telefone').value = pessoas[id].telefone;
     if (pessoas[id].xp)
     {
         document.getElementById('experienciaSim').checked = true;
@@ -63,4 +78,31 @@ if (id !== null)
     {
         document.getElementById('experienciaNao').checked = true;
     }
+}
+
+function testaTelefone(t)
+{
+    t.preventDefault();
+    console.log(t);
+    
+    if (t.target.value.length == 0)
+    {
+        t.target.value += '(';
+    }
+
+    if (t.target.value.length == 3)
+    {
+        t.target.value += ') ';
+    }
+
+    if (t.target.value.length == 10)
+    {
+        t.target.value += '-';
+    }
+
+    if ((/[0-9]/g).test(t.key) && t.target.value.length < 15)
+    {
+        t.target.value += t.key;
+    }
+    
 }

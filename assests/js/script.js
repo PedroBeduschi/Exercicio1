@@ -57,7 +57,7 @@ function desenhaTabela()
                     ` + pessoas[pessoa].nome + `
                 </td>
                 <td>
-                    ${pessoas[pessoa].tel}
+                    ${pessoas[pessoa].telefone}
                 </td>
                 <td>
                     ${(pessoas[pessoa].xp ? `<strong style="color:green"> Sim </strong>` : `<strong style="color:red"> Não </strong>`)}
