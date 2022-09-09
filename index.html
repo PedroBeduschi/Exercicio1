@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./assests/css/style.css">
         <link rel="stylesheet" href="./assests/css/form.css">
+        <link rel="stylesheet" href="./assests/css/list.css">
         <title>
             Exemplo
         </title>
@@ -16,30 +17,28 @@
             <a href="./index.html">
                 Listagem
             </a>
-            <a href="./form.html">
+            <a id="home" href="./form.html">
                 Cadastrar
             </a>
         </section>
-        <section>
-            <form>
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input id="nome" type="text" placeholder="Nome"/>
-                </div>
-                <div>
-                    <label for="telefone">Telefone:</label>
-                    <input id="telefone" type="text" placeholder="(00) 00000 0000"/>
-                </div>
-                <div id="divxp">
-                    <label>Experiência prévia: </label>
-                    <input id="experienciaSim" name="xp" type="radio"/>
-                    <label for="experienciaSim">Sim</label>
-                    <input id="experienciaNao" name="xp" type="radio"/>
-                    <label for="experiencianao">Não</label>
-                </div>
-                <input type="submit" value="Salvar" style="width: 20%;"/>
-            </form>
-        </section>
+        <table class="lista">
+            <tr>
+                <td style="width: 45%;">
+                    Nome
+                </td>
+                <td style="width: 20%;">
+                    Telefone
+                </td>
+                <td style="width: 20%;">
+                    Experiência prévia
+                </td>
+                <td style="width: 15%;">
+                    Ações
+                </td>
+            </tr>
+    
+        </table>
+        
         
         <script src="./assests/js/script.js"></script>
     </body>

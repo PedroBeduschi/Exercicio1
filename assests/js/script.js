@@ -1,6 +1,6 @@
 console.log('Código javascript')
 
-let pessoas0 = localStorage.getItem('pessoas')
+var pessoas0 = localStorage.getItem('pessoas')
 if (pessoas0 != null)
 {
     var pessoas = JSON.parse(pessoas0);
@@ -64,6 +64,7 @@ function desenhaTabela()
                 </td>
                 <td>
                     <button onclick="excluiUsuario(${pessoa})"> Excluir </button>
+                    <a href="./form.html?pessoa=${pessoa}">Editar</a>
                 </td>
             </tr>`    
     };
